@@ -155,7 +155,3 @@ function verificarSiHayTareas() {
 
 	
 }
-
-
-
-//localStorage.setItem("tarea1480522868162",'{"tarea":"25","fecha":"2016-11-29"}'
