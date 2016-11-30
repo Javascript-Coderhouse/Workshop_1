@@ -1,5 +1,3 @@
-
-
 function verificarSiHayTareas() {
 
 	var alerta = document.getElementById("nada");
@@ -46,10 +44,9 @@ function verificarSiHayTareas() {
 				nroSpan++;
 				ids++;
 			};
-		}	;
+		};
 	};
 	var cargarLocalStorage = function(veces) {
-
 		for (var i = veces; i < localStorage.length; i++) {
 			a = JSON.parse(localStorage.getItem(localStorage.key(i)));
 			var final = [localStorage.key(i),a.fecha,a.tarea,"Pending"];
@@ -57,13 +54,13 @@ function verificarSiHayTareas() {
 		};
 		contador++;
 	};
+	
 	if (localStorage.length == 0) {
 		alerta.innerText = "NO HAY TAREAS";
+	
 	} else {
 		cargarLocalStorage(contador);
 		contador = localStorage.length;
-
-
 	};
 
 	var datos = {
@@ -77,17 +74,18 @@ function verificarSiHayTareas() {
 
 		} else if (datos.fecha.value == "") {
 			alerta.innerText = "la fecha está vacía";
+		
 		} else if (agregarTarea.value == "Editar Tarea"){
 			editarLocalStorage(cEditar);
 			location.reload();
 			console.log("editando");
+		
 		} else {
 			alerta.innerText = "";
 			localStorage.setItem("tarea" + Date.now(), JSON.stringify(baseDeDatos));
 			cargarLocalStorage(contador);
 			location.reload();
-		};
-		
+		};		
 	};
 
 	var tareaAgregada="";
@@ -96,17 +94,15 @@ function verificarSiHayTareas() {
 
 	var agregarTarea = document.getElementById("agregarTarea");
 	agregarTarea.onclick = function() {
-	
 		tareaAgregada = datos.tarea.value;
 		fechaAgregada = datos.fecha.value;
 		baseDeDatos = {
 			tarea: tareaAgregada,
-			fecha: fechaAgregada
-			
+			fecha: fechaAgregada		
 		}
 		validarInformacion();
-
 	};
+
 	var tr = document.getElementsByTagName("tr");
 
 	function borrarFila(nroFila) {
@@ -114,8 +110,7 @@ function verificarSiHayTareas() {
 		console.log(nroFilaMasUno);
 		lista.removeChild(tr[nroFilaMasUno]);		
 		localStorage.removeItem(localStorage.key(nroFila));
-		location.reload();
-		
+		location.reload();		
 	};
 	
 	var borrar = document.getElementsByClassName("botonBorrar");
@@ -130,7 +125,6 @@ function verificarSiHayTareas() {
 		objeto.fecha = fechaAgregada;
 		var datosEditados = JSON.stringify(objeto);
 		localStorage.setItem(localStorage.key(fila),datosEditados);
-
 	}
 
 	function borrando(e) {
@@ -146,12 +140,10 @@ function verificarSiHayTareas() {
 		datos.tarea.value = tareaEditada;
 		agregarTarea.value = "Editar Tarea";
 		cEditar = i-1;		
-	}
+	};
 
 	for (var i = 0; i < borrar.length; i++) {
 		borrar[i].addEventListener("click", borrando);
 		editar[i].addEventListener("click", editando);
-	};
-
-	
+	};	
 }
