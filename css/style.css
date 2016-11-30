@@ -1,6 +1,9 @@
 #nuevaTarea{
   font-size: 25px;
 }
+table {
+	margin-top: 50px;
+}
 
 .botonBorrar {
 	background: #ff5b57;
@@ -14,4 +17,8 @@
 	color: #fff;
 	border-radius: 5px;
 	border-color: #f59c1a;
+}
+#nada {
+	font-size: 30px;
+    margin-left: 50px;
 }
