@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1.0" name="viewport"/>
+    <title>Listado de tareas</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" media="screen,projection" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" media="screen,projection" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css
+">
+  </head>
+  <body onload="verificarSiHayTareas()">
+    <nav class="light-blue lighten-1" role="navigation">
+      <div class="nav-wrapper container">
+        <a class="brand-logo" href="#" id="logo-container">Mi lista</a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="#">Solo Tareas</a>
+          </li>
+        </ul>
+
+        <ul class="side-nav" id="nav-mobile">
+          <li>
+            <a href="#">Solo Tareas</a>
+          </li>
+        </ul>
+        <a class="button-collapse" data-activates="nav-mobile" href="#">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br><br>
+        <h1 class="header center orange-text">Bienvenido a lista de tareas</h1>
+        <div class="row center">
+          <input id="fechaTarea" type="date" name="fecha">
+          <input id="nuevaTarea" name="name" placeholder="Ingresa una tarea" type="text">
+        </div>
+        <div class="row center">
+          <input class="btn-large waves-effect waves-light orange" id="agregarTarea" name="name" type="button" value="Agregar Tarea">
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="section">
+
+        <div class="row">
+          <div class="col s12 m4"></div>
+          <table>
+            <thead>
+              <th>
+                ID
+              </th>
+              <th>
+                Fecha
+              </th>
+              <th>
+                Tarea
+              </th>
+              <th>
+                Estado
+              </th>
+              <th>
+                Acciones
+              </th>
+            </thead>
+            <tbody id="listadoTareas">
+             
+            </tbody>
+             <span id="nada"></span>
+          </table>
+        </div>
+
+      </div>
+
+      <!--  Scripts-->
+      <script src="js/materialize.js"></script>
+      <script src="js/init.js"></script>
+      <script src="js/index.js"></script>
+
+    </body>
+  </html>
