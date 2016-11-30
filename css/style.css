@@ -1,3 +1,17 @@
 #nuevaTarea{
   font-size: 25px;
 }
+
+.botonBorrar {
+	background: #ff5b57;
+	color: #fff;
+	border-radius: 5px;
+	border-color: #ff5b57;
+}
+
+.botonEditar {
+	background: #f59c1a;
+	color: #fff;
+	border-radius: 5px;
+	border-color: #f59c1a;
+}
